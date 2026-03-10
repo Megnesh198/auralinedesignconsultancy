@@ -1757,3 +1757,66 @@ body { background-color: #1a1a1a; font-family: sans-serif; }
     .footer-grid { text-align: center; }
     .social-icons { justify-content: center; }
 }
+
+
+
+
+
+
+/*New Mobile View*/
+
+
+
+/* --- MOBILE RESPONSIVE MASTER FIX --- */
+@media (max-width: 768px) {
+    /* 1. Navbar ko screen ke andar fit karein */
+    .glass-nav {
+        width: 90% !important; /* Screen se bahar nahi jayega */
+        padding: 10px 15px !important;
+        margin-top: 10px;
+        flex-wrap: wrap; /* Items niche adjust ho jayenge */
+    }
+
+    /* 2. Desktop menu ko hide karein */
+    .nav-links {
+        display: none; /* Default mein hidden */
+        width: 100%;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.95);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 20px;
+        border-radius: 0 0 20px 20px;
+        text-align: center;
+    }
+
+    /* Jab menu active ho, tab dikhayein */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* 3. Hamburger Button ko show karein */
+    .menu-toggle {
+        display: block !important;
+        font-size: 24px;
+        color: #fff;
+    }
+
+    /* 4. Images aur Grid ka overflow rokein */
+    .projects-grid, .testimonials-grid {
+        grid-template-columns: 1fr !important; /* Ek column */
+        width: 100% !important;
+        padding: 0 15px !important;
+    }
+
+    /* 5. Main content ko overflow se bachayein */
+    body {
+        overflow-x: hidden; /* Side scroll band */
+    }
+}
+
+
+
+
+
