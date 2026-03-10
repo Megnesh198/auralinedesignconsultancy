@@ -1,0 +1,1759 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    
+    background: #000;
+    color: #fff;
+    overflow-y: auto;   /* Ye scroll enable karega */
+    overflow-x: hidden;
+    width: 100%;
+}
+#bg-video {
+    position: absolute; /* Fixed ki jagah Absolute karein */
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%); /* Video center karne ke liye */
+    filter: brightness(0.6);
+    object-fit: cover;
+}
+
+/* Nav Bar with Opposite Corners */
+.glass-nav {
+    position: fixed; /* Isse nav bar ek jagah ruk jayega */
+    top: 0;         /* Screen ke sabse upar */
+    left: 50%;      /* Center mein laane ke liye */
+    transform: translateX(-50%); /* Perfect centering logic */
+    z-index: 1000;  /* Taaki baaki content iske peeche se jaye */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(160, 160, 160, 0.7); /* Grayish transparent */
+    margin: 30px auto;
+    width: 94%;
+    padding: 10px 60px;
+    height: 110px;
+    /* Opposite Corners Logic */
+    border-radius: 80px 0px 80px 0px; 
+    backdrop-filter: blur(10px);
+}
+
+/* Logo Styling */
+.logo-area {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.brand-name {
+    font-size: 3.8rem;
+    color: #0029ff; /* Specific Blue */
+    font-weight: 900;
+    line-height: 0.8;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    letter-spacing: -2px;
+}
+
+.brand-sub {
+    font-size: 1.8rem;
+    color: #000;
+    font-weight: bold;
+    align-self: flex-end; /* Right aligned under Auraline */
+    margin-right: 5px;
+}
+
+/* Menu Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li { margin: 0 20px; }
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 900;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* Contact Button */
+.contact-btn {
+    background: #052424 !important;
+    color: #1fe0ba !important; /* Cyan text */
+    padding: 12px 30px !important;
+    border-radius: 40px !important;
+}
+
+/* Hero Text Styling */
+.hero-content {
+    margin-top: 50px;
+    padding-left: 80px;
+}
+
+.hero-content h1 {
+    font-size: 5rem;
+    color: white;
+    letter-spacing: -1px;
+}
+
+.space-highlight {
+    background: rgba(100, 100, 100, 0.5); /* Like Image gray background */
+    display: inline-block;
+    padding: 10px 40px;
+    border-radius: 50px;
+    margin: 10px 0;
+}
+
+.blue-text {
+    font-size: 4.5rem;
+    color: #0029ff;
+}
+
+.hero-content p {
+    color: white;
+    font-size: 1.5rem;
+    width: 500px;
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif;
+    font-weight: normal;
+}
+/* Navigation Bar */
+.glass-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(160, 160, 160, 0.7); /* Like Image gray-transparent color */
+    backdrop-filter: blur(10px);
+    margin: 10px auto;
+    width: 96%;
+    padding: 10px 20px;
+    height: 100px;
+    /* Opposite Corners Logic */
+    border-radius: 0px 80px 0px 80px; 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.hero-layout, .hero-section {
+    margin-top: 120px; 
+}
+
+/* Logo Area: Exact Color & Shadow */
+.logo-area {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-name {
+    font-size: 3.2rem;
+    color: #0029ff; /* Bright Blue */
+    font-weight: 900;
+    line-height: 0.8;
+    letter-spacing: -2px;
+    /* Text Shadow effect from image */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.brand-sub {
+    font-size: 1.5rem;
+    color: #000;
+    font-weight: bold;
+    align-self: flex-end;
+    margin-top: 5px;
+}
+
+/* Navigation Links & Hover Effect */
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #000;
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* Link Hover Animation (Underline Effect) */
+.nav-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #f6f6f7;
+    transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+    width: 100%;
+}
+
+/* Contact Button: Exact Background & Glow Effect */
+.contact-btn {
+    text-decoration: none;
+    background: #052424; /* Dark Teal background */
+    color: #1fe0ba !important; /* Cyan text */
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.contact-btn:hover {
+    background: #0a3a3a;
+    /* Neon Glow effect */
+    box-shadow: 0 0 15px rgba(31, 224, 186, 0.5);
+    transform: translateY(-2px);
+    color: #fff !important;
+}
+/* Navigation Links Styling */
+.nav-links a {
+    text-decoration: none;
+    color: #000; /* Default color black [cite: 5] */
+    font-weight: 800;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    padding: 10px 15px;
+    transition: color 0.3s ease; /* Smooth color change */
+}
+
+/* Hover Effect: Only these links will be white with the mouse button */
+.nav-links a:not(.contact-btn):hover {
+    color: #ffffff !important; /* Text white ho jayega */
+}
+
+/* Contact Us Button: Its color will not change */
+.contact-btn {
+    background-color: #052424 !important; /* Dark teal background */
+    color: #1fe0ba !important; /* Cyan text color */
+    padding: 12px 25px !important;
+    border-radius: 50px !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    cursor: pointer;
+    /* There is no hover color change effect. */
+}
+/* Font and Base Styling */
+.main-text {
+    padding-left: 10%;
+    margin-top: 80px;
+}
+
+/* "Elevate Your" Styling */
+.elevate-text {
+    font-family: 'Arial Black', Gadget, sans-serif; /* Bold and clean font */
+    font-size: 5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    letter-spacing: -2px;
+}
+
+/* "Space." Wrapper (The Gray Capsule) */
+.space-wrapper {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent gray circle */
+    display: inline-block;
+    padding: 5px 45px;
+    border-radius: 100px; /* Perfect oval shape */
+    margin-bottom: 30px;
+    backdrop-filter: blur(5px);
+}
+
+/* "Space." Blue Text */
+.space-text {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 4.5rem;
+    color: #0029ff; /* Bright blue color from image */
+    /* Dark shadow as seen in image */
+    text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3); 
+    display: inline-block;
+}
+
+/* Description Text */
+.sub-text {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #ffffff;
+    max-width: 550px;
+    line-height: 1.4;
+}
+
+/* Navigation Links Hover: Only these turn white */
+.nav-links a:not(.contact-btn):hover {
+    color: #ffffff !important;
+    transition: 0.3s;
+}
+
+/* Contact Button remains static (No white on hover) */
+.contact-btn {
+    background-color: #052424 !important;
+    color: #1fe0ba !important;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+}
+/* Apply In CSS */
+.elevate-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+}
+
+.space-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    color: #0029ff; /* Blue color  */
+    letter-spacing: -2px;
+}
+/* Main Layout: To arrange text and images side-by-side */
+.main-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 5%;
+    margin-top: 50px;
+}
+
+/* Image Grid Styling */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 2 columns */
+    gap: 20px;
+    width: 50%; /* Right side area */
+}
+
+/* Individual Image Box */
+.img-box {
+    overflow: hidden;
+    border-radius: 30px; 
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Different sizes for Grid effect (Optional) */
+.item1 { height: 350px; border-radius: 80px 30px 30px 30px; } /* Top left extra round */
+.item2 { height: 250px; margin-top: 50px; }
+.item3 { height: 300px; margin-top: -80px; }
+.item4 { height: 320px; border-radius: 30px 30px 80px 30px; } /* Bottom right extra round */
+
+/* Image Hover Animation */
+.img-box:hover {
+    transform: scale(1.03) translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    z-index: 10;
+}
+/* Container to split Left and Right */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 8%;
+    gap: 40px;
+}
+
+/* Left side (Text) half screen */
+.hero-left {
+    flex: 1;
+}
+
+/* Right side (Images) half screen */
+.hero-right {
+    flex: 1.2;
+}
+
+/* Image Grid Styling */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.img-box {
+    overflow: hidden;
+    border-radius: 30px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.4s ease;
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* staggered look heights */
+.item1 { height: 350px; border-radius: 80px 30px 30px 30px; } 
+.item2 { height: 250px; margin-top: 50px; }
+.item3 { height: 280px; margin-top: -60px; }
+.item4 { height: 320px; border-radius: 30px 30px 80px 30px; }
+
+/* Hover animation */
+.img-box:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+/* Container to handle side-by-side layout */
+.hero-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 8%;
+    gap: 20px;
+}
+
+.hero-left { flex: 1; }
+.hero-right { flex: 1.2; }
+
+/* Photo Grid logic */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.img-box {
+    border-radius: 30px; 
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    transition: transform 0.4s ease;
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 1.Remove overflow hidden from the body so it can scroll if needed. */
+body {
+    overflow-y: auto; /* Auto instead of Hidden */
+    background: #000;
+    min-height: 100vh;
+}
+
+/* 2. Make the hero section responsive */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Sirf screen ki height tak rahega */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 3. Adjust the text size slightly to make sure it takes up space. */
+.elevate-text {
+    font-size: clamp(3rem, 8vw, 5rem); /* It can be scaled up or down depending on the screen size. */
+    line-height: 1.1;
+}
+
+.space-text {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+/* 4. Fixed the photo grid so images don't go off the screen */
+.hero-right {
+    flex: 1;
+    max-width: 550px; /* Set aLimit */
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(0, 1fr);
+    gap: 15px;
+}
+
+.img-box {
+    width: 100%;
+    height: auto; /* Keep the height auto so that the aspect ratio is not distorted */
+    max-height: 300px; /* To limit extra-large photos */
+    border-radius: 20px;
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Image will not be cut, will fit in the box */
+}
+
+/* 5. Reduce the staggered effect to fit the screen */
+.item1 { height: 280px; }
+.item2 { height: 220px; margin-top: 30px; }
+.item3 { height: 240px; margin-top: -40px; }
+.item4 { height: 260px; }
+/* --- Why Auraline Section Styling --- */
+.why-section {
+    background-color: #1a1a1a; /* Dark grayish background */
+    color: white;
+    padding: 80px 10%;
+    text-align: center;
+}
+
+/* Stats Styling */
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+    gap: 20px;
+}
+
+.stat-item h2 {
+    font-size: 3rem;
+    color: #d4a373; /* Golden/Orange tint jaisa image mein hai */
+    margin-bottom: 10px;
+}
+
+.stat-item p {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Content Area */
+.why-content h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+.brand-highlight {
+    color: #ff7b00; /* Orange color for Auraline Design */
+}
+
+.description-text {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.description-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #cccccc;
+    margin-bottom: 25px;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .stats-container {
+        grid-template-columns: repeat(3, 1fr);
+        display: grid;
+    }
+    
+    .why-content h1 {
+        font-size: 2rem;
+    }
+    
+    .stat-item h2 {
+        font-size: 2rem;
+    }
+}
+/* --- Why Auraline Design Section Styling --- */
+/* --- Why Auraline Full Section --- */
+.why-container {
+    background-color: #2b2b2d; /* Exact dark gray background */
+    width: 100%;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    padding-bottom: 80px;
+}
+
+/* World Map Stats Area */
+.stats-section {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('Desktop - 2.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 150px 5%;
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #f19156; /* Orange/Gold shade */
+    margin-bottom: 10px;
+}
+
+.stat-text {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+/* Content Area */
+.text-section {
+    text-align: center;
+    padding: 60px 10%;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+    margin-bottom: 40px;
+    font-weight: 300; /* Like Light font on image */
+}
+
+.orange-text {
+    color: #f19156; /* Exact Match with Image Color */
+    font-weight: 700;
+}
+
+/* Paragraph Spacing */
+.desc-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.desc-container p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #e0e0e0;
+    margin-bottom: 30px;
+    text-align: center; /* center align with image */
+}
+
+/* Mobile responsive fix */
+@media (max-width: 768px) {
+    .stats-section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    .main-title { font-size: 1.8rem; }
+}
+.content-box {
+    background-color: #2b2b2d; /* Like dark gray in image */
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.main-heading {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Put 'WHY' on top */
+    gap: 15px; /* 'WHY' and 'AURALINE' GaP EaCh OtHeR */
+    font-size: 3rem;
+    letter-spacing: 3px;
+    margin-bottom: 50px;
+}
+
+.white-text {
+    color: #ffffff;
+    font-weight: 300;
+}
+
+/* 'AURALINE' and 'Design ?' 1 after 1 logic */
+.branding-box {
+    display: flex;
+    flex-direction: column;
+    text-align: left; /*  'Design ?' Start from left side */
+}
+
+.orange-text {
+    color: #f18c4e; /* orange color */
+    font-weight: 800;
+    line-height: 1;
+}
+
+.design-text {
+    margin-top: 5px; /* Gap in 2 lines */
+}
+
+.desc-text p {
+    color: #d1d1d1;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
+/* whole are center align on mobile */
+@media (max-width: 768px) {
+    .main-heading {
+        flex-direction: column;
+        align-items: center;
+        font-size: 2rem;
+    }
+    .branding-box {
+        text-align: center;
+    }
+}
+.logo-area {
+    display: flex;
+    flex-direction: row; /* Logo aur text ko ek line mein laane ke liye */
+    align-items: center;
+    gap: 15px; /* Logo aur text ke beech ka gap */
+}
+
+.nav-logo {
+    height: 60px;    /* Logo ki height aap apne hisaab se badal sakte hain */
+    width: auto;     /* Aspect ratio sahi rakhne ke liye */
+    display: block;
+}
+
+/* Agar aap chahte hain ki branding (Auraline Design) upar-niche rahe 
+   lekin logo unke left mein rahe, toh ye use karein: */
+.logo-text-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+/* Logo aur Text ko ek line mein rakhne ke liye */
+.logo-area {
+    display: flex;
+    align-items: center; /* Logo aur text ko vertically center karega */
+    gap: 1px;           /* Logo aur text ke beech ka gap */
+}
+
+/* Logo ka size */
+.nav-logo {
+    height: 100px;       /* Aap isse chota-bada kar sakte hain */
+    width: auto;
+}
+
+/* Text ko upar-neeche karne ki logic */
+.brand-text-wrapper {
+    display: flex;
+    flex-direction: column; /* Isse Design hamesha Auraline ke neeche rahega */
+    justify-content: center;
+    line-height: 1.1;       /* Dono words ke beech ka gap kam karne ke liye */
+}
+
+.brand-name {
+    font-size: 64px;
+    font-weight: bold;
+    color: #0044ff;         /* Blue color jaisa aapki image mein hai */
+    text-transform: none;
+}
+
+.brand-sub {
+    font-size: 30px;
+    font-weight: bold;
+    color: #000000;         /* Black color 'Design' ke liye */
+    padding-left: 2px;      /* Halka sa right shift perfect alignment ke liye */
+}
+/* --- About Us Section Styling --- */
+.about-us-section {
+    background-color: #1a1a1a; /* Dark background color of the main page */
+    padding: 100px 0; /* Vertical spacing */
+    font-family: Arial, sans-serif; /* Standard font */
+    color: white; /* Default text color */
+}
+
+/* Container ko screen ke left se flush karne ke liye */
+.container {
+    max-width: 100%; /* Width poori kar di */
+    margin: 0;       /* Auto margin hataya taaki left-align ho jaye */
+    padding: 0;      /* Left side ka padding hataya */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Ye sabse zaroori hai: Left se start karne ke liye */
+}
+
+/* White Label Styling */
+.about-label {
+    background-color: white;
+    padding: 30px 60px; /* Thoda padding badha diya taaki look achi aaye */
+    
+    /* Left side touch rahe, isliye border-radius left ka 0 kiya */
+    border-top-left-radius: 0px; 
+    border-bottom-left-radius: 0px;
+    
+    /* Right side rounded rahega */
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40px; /* Text box aur label ke beech gap */
+}
+
+.about-label h2 {
+    color: #0044ff;
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+/* Right Side: Dark Text Box */
+.about-text-box {
+    background-color: #2c2c2e; /* Slightly lighter dark color for the box */
+    padding: 40px;
+    border-radius: 40px; /* Fully rounded corners for the box */
+    max-width: 1000px; /* Restricting width to match image */
+}
+
+.about-text-box p {
+    font-size: 1.1rem;
+    line-height: 1.8; /* Good spacing for readability */
+    color: #cccccc; /* Off-white color for description text */
+    margin: 0;
+    font-weight: 300; /* Lighter font weight */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack label and box vertically */
+        text-align: center;
+    }
+    
+    .about-label {
+        border-radius: 40px; /* Full rounding for mobile */
+        margin-bottom: 30px; /* Spacing below label */
+        padding: 20px 40px;
+    }
+    
+    .about-label h2 {
+        font-size: 1.8rem;
+    }
+    
+    .about-text-box {
+        padding: 30px;
+    }
+}
+
+.blue-text {
+    color: #0044ff; /* Yeh wahi bright blue color hai jo aapki images mein dikh raha hai */
+font-size: 50px;
+}
+
+* {box-sizing: border-box; }
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+body { background-color: #1a1a1a; font-family: sans-serif; }
+
+.services-wrapper { width: 100%; overflow-x: hidden; }
+
+/* Full-width Header Box */
+.header-box {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 60px 5%;
+    border-left: 10px solid #007bff;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+}
+/* --- Root Colors --- */
+:root {
+    --bg-dark: #2a2a2a; /* Main page background (cite: image_3) */
+    --text-orange: #f47d21; /* Title color (cite: image_3) */
+    --text-white: #000000; /* General text color (cite: image_3) */
+    --text-gray-light: hsl(0, 0%, 69%); /* Service description text color (cite: image_3) */
+    --primary-blue: #007bff; /* Header "SERVICES" title color (cite: image_1) */
+    --bg-card-dark: #202020; /* Service card background (cite: image_3) */
+    --bullet-color: #007bff; /* Point bullet color (cite: image_3) */
+}
+
+/* --- Global Reset --- */
+
+/* --- Main Container --- */
+.services-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- 1. Main Header Styling (cite: image_1, image_3) --- */
+.services-main-header {
+    background-color: var(--bg-dark); /* Page background (cite: image_3) */
+    padding: 60px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.header-content-box {
+    background-color: #f5f5f5; /* Light box background (cite: image_1, image_3) */
+    color: #333; /* Dark text for light box (cite: image_1, image_3) */
+    max-width: 1200px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    border-radius: 20px; /* Curved corners (cite: image_1, image_3) */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.header-title {
+    color: var(--primary-blue); /* Title in blue (cite: image_1, image_3) */
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    flex: 0 0 auto;
+    padding: 40px;
+    margin-right: 20px;
+}
+
+.header-description {
+    font-size: 0.95rem;
+    color: #555555;
+    padding: 40px;
+    border-left: 2px solid #ddd; /* Separator line between title and text (cite: image_3) */
+}
+
+/* --- 2. Services Grid Styling (cite: image_3) --- */
+.services-grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    margin:  0;
+}
+
+.service-item {
+    display: flex;
+    width: 100%;
+    align-items: center; /* Center horizontally (cite: image_3) */
+    margin-bottom: 60px; /* Space between each row (cite: image_3) */
+}
+
+.service-item-reverse {
+    flex-direction: row-reverse; /* Flip content layout for alternating rows (cite: image_3) */
+}
+
+/* Service Image Box */
+.service-image {
+    flex: 1; /* Stretch to occupy 50% width (cite: image_3) */
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.service-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px; /* Curved image corners (cite: image_3) */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Subtle depth (cite: image_3) */
+}
+
+/* Service details text box */
+.service-details {
+    flex: 1; /* Stretch to occupy 50% width (cite: image_3) */
+    background-color: var(--bg-card-dark); /* Dark card background (cite: image_3) */
+    padding: 40px;
+    margin: 0 20px;
+    border-radius: 20px; /* Curved card corners (cite: image_3) */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-title {
+    color: var(--text-orange); /* Title orange color (cite: image_3) */
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+}
+
+/* Optional icon styling, assuming you use an icon library (cite: image_3) */
+.title-icon {
+    margin-right: 15px; /* Space between icon and text (cite: image_3) */
+    font-size: 1.5rem;
+    color: var(--text-orange);
+}
+
+.service-text {
+    font-size: 1rem;
+    color: var(--text-gray-light);
+    margin-bottom: 25px;
+}
+
+/* Service point lists */
+.service-points {
+    list-style-type: none; /* Remove default bullets (cite: image_3) */
+}
+
+.service-points li {
+    font-size: 0.95rem;
+    color: var(--text-gray-light);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* Point bullet styling using pseudo-element (cite: image_3) */
+.service-points li::before {
+    content: "\2022"; /* Bullet character code (cite: image_3) */
+    color: var(--bullet-color); /* Bullet color matching design points list color (cite: image_3) */
+    display: inline-block;
+    width: 1rem;
+    font-weight: bold;
+    margin-right: 10px; /* Space between bullet and point text (cite: image_3) */
+}
+
+/* Numbered point colors as from image points listing (cite: image_3) */
+.service-points li:nth-child(1) { color: var(--text-orange); } /* Match color of point 1 in listing (cite: image_3) */
+.service-points li:nth-child(2) { color: var(--bullet-color); } /* Match color of point 2 in listing (cite: image_3) */
+.service-points li:nth-child(3) { color: var(--text-orange); } /* Match color of point 3 in listing (cite: image_3) */
+
+/* Specific bullet color matching to the point listing style (cite: image_3) */
+.service-points li:nth-child(1)::before { color: var(--text-orange); } /* point 1 bullet color exact match (cite: image_3) */
+.service-points li:nth-child(2)::before { color: var(--bullet-color); } /* point 2 bullet color exact match (cite: image_3) */
+.service-points li:nth-child(3)::before { color: var(--text-orange); } /* point 3 bullet color exact match (cite: image_3) */
+
+
+/* --- 3. Responsive Styling for mobile screens --- */
+@media (max-width: 768px) {
+    /* Header styling adjustment */
+    .header-content-box {
+        flex-direction: column; /* Stack vertically (cite: image_3) */
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+
+    .header-title {
+        border-right: none;
+        border-bottom: 1px solid #0011ff; /* Separator line vertically (cite: image_3) */
+        padding-bottom: 20px;
+        margin-right: 0;
+    }
+
+    .header-description {
+        padding-top: 20px;
+    }
+
+    /* Grid row styling adjustment */
+    .service-item,
+    .service-item-reverse {
+        flex-direction: column; /* Stack all elements vertically (cite: image_3) */
+        padding: 20px; /* Horizontal space reduce (cite: image_3) */
+    }
+
+    /* Vertical stack order adjustment for reverse row */
+    .service-row-reverse .service-image {
+        margin-bottom: 0;
+        margin-top: 30px; /* Spacing on stack (cite: image_3) */
+    }
+    
+    .service-image {
+        margin-bottom: 30px; /* Vertical space on stack (cite: image_3) */
+    }
+
+    .service-details {
+        width: 100%; /* Full width for text box on mobile stack (cite: image_3) */
+        margin: 0;
+    }
+}
+.contact-section {
+    background-color: #ffffff; /* White strip */
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-around; /* Elements ko evenly spread karne ke liye */
+    align-items: center;
+    border-top: 2px solid #007bff; /* Optional: Top par halka blue border */
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: #333;
+    font-weight: 500;
+}
+
+.contact-item i {
+    font-size: 24px;
+    color: #007bff; /* Blue color matching your logo */
+}
+
+/* Responsive: Mobile ke liye upar-neeche stack ho jayega */
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column;
+        gap: 25px;
+    }
+}
+.services-wrapper { padding: 0px 0%; background: #0a0a0a; }
+
+.services-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    margin-top: 50px;
+}
+
+.service-card {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 40px;
+    background: #161616;
+    border-radius: 30px;
+    padding: 20px;
+    transition: 0.4s;
+    border: 1px solid #333;
+}
+
+/* Zig-Zag logic: Har dusra card reverse ho jayega */
+.service-card:nth-child(even) { flex-direction: row-reverse; }
+
+.service-card:hover { border-color: #007bff; transform: translateY(-10px); }
+
+.service-image { flex: 1; overflow: hidden; border-radius: 20px; }
+.service-image img { width: 100%; height: 300px; object-fit: cover; transition: 0.5s; }
+.service-card:hover img { transform: scale(1.1); }
+
+.service-content { flex: 1; color: white; }
+.service-content h2 { color: #007bff; margin-bottom: 15px; font-size: 2rem; }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .service-card, .service-card:nth-child(even) {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .service-image img { height: 200px; }
+}
+
+/* Essential Styles for the Exact Look */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+        
+        .services-main-wrapper {
+            width: 100%;
+            background-color: #1a1a1a; /* Matching your dark theme */
+            padding: 50px 0;
+            color: #fff;
+        }
+
+        .section-header {
+            text-align: center;
+            font-size: 3rem;
+            color: #ffffff; /* Blue header as seen in your image */
+            margin-bottom: 50px;
+        }
+
+        .services-grid {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+       /* Base card style */
+.service-card {
+    display: flex;
+    flex-direction: row; /* Default: Image Left, Text Right */
+    align-items: center;
+    gap: 40px; /* Image aur text ke beech ka space */
+    padding: 20px;
+    background: #1a1a1a; /* Aapka dark card background */
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+       /* Zig-Zag Effect (Har dusra card reverse ho jayega) */
+.service-card:nth-child(even) {
+    flex-direction: row-reverse; /* Text Left, Image Right */
+}
+
+/* Containers ko width dena */
+.img-container, .text-container {
+    flex: 1; /* Dono containers ko barabar width mil jayegi */
+}
+
+/* Responsive: Mobile view ke liye (taki mobile par stack ho jaye) */
+@media (max-width: 768px) {
+    .service-card, .service-card:nth-child(even) {
+        flex-direction: column; /* Mobile par upar-niche dikhega */
+    }
+}
+
+        .img-container { flex: 1; border-radius: 10px; overflow: hidden; }
+        .img-container img { width: 100%; height: 300px; object-fit: cover; display: block;
+    border-radius: 10px; transition: transform 0.5s ease; }
+        
+        .text-container { flex: 1; }
+        .text-container h3 { color: #f39c12; font-size: 2rem; margin-bottom: 15px; }
+        .text-container p { color: #ccc; margin-bottom: 15px; }
+        .text-container ul { list-style: none; color: #ccc; }
+        .text-container ul li { margin-bottom: 5px; }
+
+        /* Footer / Contact Section */
+        .footer-section {
+            width: 100%;
+            background: #000;
+            padding: 40px;
+            display: flex;
+            justify-content: space-evenly;
+            border-top: 2px solid #333;
+            color: #fff;
+        }
+
+        /* Mobile Responsive View */
+        @media (max-width: 768px) {
+            .service-card, .service-card:nth-child(even) { flex-direction: column; text-align: center; }
+            .footer-section { flex-direction: column; gap: 20px; align-items: center; }
+        }
+
+
+
+        /* Yaha se Our Creation Suru hua hai */
+
+/* Container Background */
+.creation-container {
+    background-color: #2c2c30;
+    padding: 40px 20px;
+    color: white;
+    font-family: 'Arial', sans-serif;
+}
+
+/* OUR CREATION - Lamba Box */
+.main-header-box {
+    background-color: #404044; /* Dark grey box */
+    max-width: 90%; /* Box ko lamba karne ke liye width badhayi hai */
+    margin: 0 auto 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.main-header-box h1 {
+    color: #ff9d6e; /* Orange/Peach color from image */
+    margin: 0;
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+.sub-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sub-header p {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.underline {
+    width: 150px;
+    height: 3px;
+    background-color: #40e0d0; /* Cyan color */
+    margin: 0 auto;
+}
+
+/* Grid System - Responsive side-by-side */
+.creation-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Desktop: 3 columns */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card & Mouse Hover Effect */
+.project-card {
+    background: #1e1e1e;
+    border-radius: 20px;
+    padding: 15px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-10px); /* Mouse effect: Card upar uthega */
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Button & Typography */
+.card-content h3 { font-size: 16px; margin: 15px 0 5px 0; }
+.category { color: #ff9d6e; font-size: 12px; margin-bottom: 15px; }
+
+.view-btn {
+    width: 100%;
+    background-color: #40e0d0;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* RESPONSIVE DESIGN (Mobile Fix) */
+@media (max-width: 992px) {
+    .creation-grid {
+        grid-template-columns: repeat(3, 1fr); /* Tablet: 2 columns */
+    }
+}
+
+@media (max-width: 600px) {
+    .creation-grid {
+        grid-template-columns: 1fr; /* Mobile: 1 column */
+    }
+    .main-header-box {
+        width: 95%; /* Mobile pe box screen ke hisaab se adjust hoga */
+    }
+}
+
+
+
+/* Yaha se Our Project ka Css Suru ho rahi hai */
+
+
+
+/* Container Styling */
+.completed-section {
+    background-color: #2c2c30;
+    padding: 60px 20px;
+    color: white;
+    text-align: center;
+}
+
+/* Underline Fix */
+.section-header { margin-bottom: 30px; }
+.section-header h2 { font-size: 28px; margin-bottom: 8px; }
+.teal-underline {
+    width: 140px;
+    height: 3px;
+    background-color: #00f2ff;
+    margin: 0 auto;
+}
+
+/* 3 COLUMN GRID - SIDE BY SIDE */
+.projects-grid {
+    display: grid;
+    /* 3 Columns by default (Desktop) */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+/* Card Mouse Effect (Smooth Transition) */
+.project-card {
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 20px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-align: left;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-12px); /* Mouse hover par card upar uthega */
+    box-shadow: 0 10px 30px rgba(0, 242, 255, 0.15);
+}
+
+.image-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.card-info h3 { font-size: 17px; margin-bottom: 5px; }
+.card-info p { color: #ff9d6e; font-size: 13px; margin-bottom: 15px; }
+
+.view-details {
+    width: 100%;
+    background-color: #00f2ff;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.view-details:hover { background-color: #00d8e4; }
+
+/* --- FULLY RESPONSIVE FIX --- */
+
+@media (max-width: 1024px) {
+    /* Tablet Par: 2 Columns ho jayenge */
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 650px) {
+    /* Mobile Par: 1 Column (Ek ke niche ek image) */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+    
+    .section-header h2 { font-size: 22px; }
+    .teal-underline { width: 100px; }
+}
+
+
+
+
+/* Service cards mein icons and bullets add karne ke lye */
+
+
+/* Service List Styling */
+.service-list {
+    list-style: none; /* Default dots hatane ke liye */
+    padding: 0;
+    margin: 15px 0;
+    text-align: left; /* Text ko left align rakhega */
+}
+
+.service-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Icon aur text ke beech gap */
+    color: #ccc;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.service-list li i {
+    color: #00f2ff; /* Teal color icons */
+    font-size: 12px;
+}
+
+/* Card layout fix taaki button niche rahe */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-content, .card-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.view-btn, .view-details {
+    margin-top: auto; /* Button ko hamesha bottom mein rakhega */
+}
+
+
+/* 3 dot Hamburger kem lye */
+
+/* --- MOBILE & HAMBURGER MENU CSS --- */
+
+/* Normal desktop par menu button chhupa rahega */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .glass-nav {
+        width: 95%;
+        margin: 10px auto;
+        padding: 0 20px;
+        height: 70px; /* Mobile par height kam */
+    }
+
+    .menu-toggle {
+        display: block; /* Mobile par icon dikhega */
+    }
+
+    .nav-links {
+        display: none; /* Default mein links band rahenge */
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: rgba(30, 30, 30, 0.95);
+        padding: 20px;
+        gap: 15px;
+        text-align: center;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+    }
+
+    /* Jab 'active' class add hogi tab menu dikhega */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .contact-btn {
+        display: inline-block;
+        width: 80%;
+    }
+
+    /* Projects Grid fix for Mobile */
+    .projects-grid {
+        grid-template-columns: 1fr; /* Ek ke niche ek image */
+        padding: 0 15px;
+    }
+
+    .section-header h2 {
+        font-size: 24px;
+    }
+}
+
+
+
+/* View More aur Client Testimonials ke lye */
+
+/* View More Button Styling */
+.view-more-container {
+    text-align: center;
+    margin: 40px 0 80px 0;
+}
+
+.view-more-btn {
+    background: transparent;
+    border: 2px solid #00f2ff;
+    color: #00f2ff;
+    padding: 12px 40px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.view-more-btn:hover {
+    background: #00f2ff;
+    color: #000;
+}
+
+/* --- TESTIMONIALS SMART GRID --- */
+.testimonials-section {
+    background-color: #000;
+    padding: 80px 20px;
+    color: white;
+    text-align: center;
+}
+
+.testimonials-grid {
+    display: grid;
+    /* Yeh property side-by-side cards ko manage karegi */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+    gap: 25px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.testimonial-card {
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: left;
+    transition: 0.3s;
+    border-bottom: 3px solid #00f2ff; /* Teal accent line */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 242, 255, 0.1);
+}
+
+.quote-icon { color: #00f2ff; font-size: 24px; margin-bottom: 15px; }
+
+.testimonial-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ccc;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.client-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #00f2ff;
+}
+
+.client-name { font-size: 16px; margin: 0; color: #fff; }
+.client-role { font-size: 12px; color: #ff9d6e; margin: 0; }
+
+/* Mobile View Adjustments */
+@media (max-width: 480px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr; /* Pure mobile par ek ke niche ek */
+    }
+}
+
+
+
+/* Contact Section ke lye */
+
+
+
+/* --- CONTACT & FOOTER STYLING --- */
+.contact-footer-wrapper {
+    background: #000;
+    padding-top: 80px;
+}
+
+.contact-container {
+    max-width: 1100px;
+    margin: 0 auto 100px;
+    display: flex;
+    flex-wrap: wrap; /* Mobile responsiveness ke liye */
+    gap: 50px;
+    padding: 0 20px;
+}
+
+.contact-info { flex: 1; min-width: 300px; }
+.contact-info h2 { font-size: 35px; color: #00f2ff; margin-bottom: 20px; }
+.contact-info p { color: #ccc; margin-bottom: 30px; }
+
+.info-details .item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.info-details i { color: #00f2ff; font-size: 20px; }
+
+/* Professional Form Design */
+.professional-form {
+    flex: 1.5;
+    min-width: 300px;
+    background: rgba(255, 255, 255, 0.05); /* Glass effect */
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.input-group { display: flex; gap: 15px; margin-bottom: 15px; }
+
+.professional-form input, .professional-form textarea {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid #333;
+    padding: 15px;
+    color: #fff;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.professional-form input:focus { border-color: #00f2ff; }
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: #00f2ff;
+    color: #000;
+    border: none;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+
+.submit-btn:hover { background: #ff9d6e; transform: scale(1.02); }
+
+/* Footer Design */
+.site-footer {
+    background: #0a0a0a;
+    padding: 60px 20px 20px;
+    border-top: 1px solid #1e1e1e;
+}
+
+.footer-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-about h3 { color: #00f2ff; margin-bottom: 15px; }
+.footer-links h4, .footer-social h4 { margin-bottom: 20px; font-size: 18px; }
+.footer-links ul { list-style: none; }
+.footer-links li { margin-bottom: 10px; }
+.footer-links a { color: #ccc; text-decoration: none; transition: 0.3s; }
+.footer-links a:hover { color: #00f2ff; padding-left: 5px; }
+
+.social-icons { display: flex; gap: 20px; font-size: 24px; }
+.social-icons a { color: #fff; transition: 0.3s; }
+.social-icons a:hover { color: #00f2ff; }
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #1e1e1e;
+    padding-top: 20px;
+    color: #555;
+    font-size: 14px;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 600px) {
+    .input-group { flex-direction: column; }
+    .professional-form { padding: 20px; }
+    .footer-grid { text-align: center; }
+    .social-icons { justify-content: center; }
+}
